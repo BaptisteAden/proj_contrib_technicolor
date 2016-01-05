@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./includes/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./index.css">
+		<script src="./includes/jquery-2.1.4.min.js"></script>
+		<script src="./includes/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div> <!-- TECHNICOLOR'S DIV (to delete) -->
+			
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#new-project">Nouveau</a></li>
+				<li><a data-toggle="tab" href="#current-project">Projet</a></li>
+			</ul>
+			
+			<div class="tab-content">
+				<div id="new-project" class="page-content tab-pane fade in active">
+					<form>
+						<div class="form-group">
+							<label>Nom du projet</label>
+							<input class="form-control" type="text">
+						</div>
+						<div class="form-group">
+							<label>Type de production</label>
+							<select class="form-control">
+								<option>Bande dessinée<option>
+								<!-- Add other production types here -->
+							</select>
+						</div>
+						<div class="form-group">
+							<button type="button" class="btn btn-primary" style="float:right">Créer</button>
+						</div>
+					</form>
+				</div>
+				
+				<div id="current-project" class="page-content tab-pane fade">
+					Work in progress...
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
