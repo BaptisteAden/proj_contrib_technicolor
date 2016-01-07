@@ -2,7 +2,7 @@ body{
 	margin: 2px;
 }
 
-#new-project{
+#pane-new{
 	position: absolute;
 	width: 500px;
 	height: 200px;
@@ -12,6 +12,69 @@ body{
     margin-left: -250px;
 }
 
-.page-content{
+#select-project{
+	width: 375px;
+	margin-right: 10px
+}
+
+.margin{
 	margin: 20px;
 }
+
+.wrapper{
+	width: 500px;
+	margin: 20px auto;
+}
+
+.wrapper-header{
+	overflow: auto;
+	cursor: pointer;
+}
+
+.wrapper-title{
+	float: left;
+}
+
+.wrapper-icon{
+	float: right;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.inline-select{
+	display: inline;
+	margin-left: 10px;
+}
+
+
+
+form button{
+	float: right;
+}
+
+.panel .panel{
+	box-shadow: none;
+	border: none;
+}
+
+.panel .panel-group{
+	margin-top: 5px;
+}
+
+.panel .panel .panel-heading{
+	border-radius: 0;
+}
+
+.panel .panel .panel-heading:hover{
+	background-color: #e6e6e6;
+}
+
+.panel .panel .form-control{
+	width: 225px;
+}
+
+
+
+

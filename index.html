@@ -4,17 +4,18 @@
 		<link rel="stylesheet" type="text/css" href="./index.css">
 		<script src="./includes/jquery-2.1.4.min.js"></script>
 		<script src="./includes/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+		<script src="./index.js"></script>
 	</head>
 	<body>
 		<div> <!-- TECHNICOLOR'S DIV (to delete) -->
 			
 			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" href="#new-project">Nouveau</a></li>
-				<li><a data-toggle="tab" href="#current-project">Projet</a></li>
+				<li class="active"><a data-toggle="tab" href="#pane-new">Nouveau</a></li>
+				<li><a data-toggle="tab" href="#pane-project">Projet</a></li>
 			</ul>
 			
 			<div class="tab-content">
-				<div id="new-project" class="page-content tab-pane fade in active">
+				<div id="pane-new" class="margin tab-pane fade in active">
 					<form>
 						<div class="form-group">
 							<label>Nom du projet</label>
@@ -33,11 +34,103 @@
 					</form>
 				</div>
 				
-				<div id="current-project" class="page-content tab-pane fade">
-					Work in progress...
+				<div id="pane-project" class="margin tab-pane fade">
+					<div id="current-project" class="wrapper panel panel-primary">
+						<div class="panel-heading wrapper-header" data-target="#current-project-toggle" data-toggle="collapse">
+							<span class="wrapper-title">Projet actuel : </span><span class="glyphicon glyphicon-collapse-down wrapper-icon"></span>
+						</div>
+						<div id="current-project-toggle" class="collapse">
+							<div class="panel-body">
+								<form class="form-inline">
+									<select id="select-project" class="form-control">
+										<!-- TODELETE test en dur -->
+										<option>Test de BD<option>
+										<!---->
+									</select>
+									<button type="button" class="btn btn-primary">Charger</button>
+								</form>
+								<a href="#">Paramètres avancés »</a>
+							</div>
+						</div>
+					</div>
+					<div id="contributors-management" class="wrapper panel panel-primary">
+						<div class="panel-heading wrapper-header" data-target="#contributors-management-toggle" data-toggle="collapse">
+							<span class="wrapper-title">Gestion des contributeurs</span><span class="glyphicon glyphicon-collapse-down wrapper-icon"></span>
+						</div>
+						<div id="contributors-management-toggle" class="collapse">
+							<div id="sub-panels-group" class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel-heading" data-target="#add-panel" data-parent="#sub-panels-group" data-toggle="collapse">Ajouter un contributeur</div>
+									<div id="add-panel" class="collapse">
+										<div class="panel-body">
+											<form>
+												<div class="form-group inline-block" style="margin-right: 10px">
+													<label>Prénom</label>
+													<input class="form-control" type="text">
+												</div>
+												<div class="form-group inline-block">
+													<label>Nom</label>
+													<input class="form-control" type="text">
+												</div>
+												<div class="form-group">
+													<label>Métier(s)</label>
+													<select class="form-control"></select>
+												</div>
+												<button type="button" class="btn btn-primary">Ajouter</button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" data-target="#update-panel" data-parent="#sub-panels-group" data-toggle="collapse">Modifier un contributeur</div>
+									<div id="update-panel" class="collapse">
+										<div class="panel-body">
+											<form>
+												<div class="form-group">
+													<label>Contributeur</label>
+													<select class="form-control inline-select"></select>
+												</div>
+												<hr>
+												<div class="form-group inline-block" style="margin-right: 10px">
+													<label>Prénom</label>
+													<input class="form-control" type="text">
+												</div>
+												<div class="form-group inline-block">
+													<label>Nom</label>
+													<input class="form-control" type="text">
+												</div>
+												<div class="form-group">
+													<label>Métier(s)</label>
+													<select class="form-control"></select>
+												</div>
+												<button type="button" class="btn btn-primary">Modifier</button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" data-target="#delete-panel" data-parent="#sub-panels-group" data-toggle="collapse">Supprimer un contributeur</div>
+									<div id="delete-panel" class="collapse">
+										<div class="panel-body">
+											<form>
+												<div class="form-group">
+													<label>Contributeur</label>
+													<select class="form-control inline-select"></select>
+												<div id="delete-checkboxes"></div>
+												</div>
+												<button type="button" class="btn btn-primary">Supprimer</button>
+											</form>
+										</div>
+									</div>
+								</div>						
+							</div>
+					</div>
+					
 				</div>
 			</div>
 			
 		</div>
+		
+		
 	</body>
 </html>
