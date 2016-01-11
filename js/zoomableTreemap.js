@@ -287,7 +287,7 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("countries.json", function (err, res) {
+    d3.json("projects/Countries/schema.json", function (err, res) {
         if (!err) {
             console.log(res);
             var data = d3.nest().key(function (d) {
