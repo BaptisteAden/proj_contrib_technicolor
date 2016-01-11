@@ -1,14 +1,19 @@
-<html>
+ï»¿<html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="./includes/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="./index.css">
-		<script src="./includes/jquery-2.1.4.min.js"></script>
-		<script src="./includes/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-		<script src="./index.js"></script>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/d3.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/d3.min.js"></script>
+		<script src="js/index.js"></script>
+		<title>Suivi de contributions</title>
+		<!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
 	</head>
 	<body>
-		<div> <!-- TECHNICOLOR'S DIV (to delete) -->
-			
+		<!-- TECHNICOLOR'S DIV -->
+		<div>
 			<ul class="nav nav-tabs">
 				<li class="active"><a data-toggle="tab" href="#pane-new">Nouveau</a></li>
 				<li><a data-toggle="tab" href="#pane-project">Projet</a></li>
@@ -24,12 +29,12 @@
 						<div class="form-group">
 							<label>Type de production</label>
 							<select class="form-control">
-								<option>Bande dessinée<option>
+								<option>Bande dessinÃ©e</option>
 								<!-- Add other production types here -->
 							</select>
 						</div>
 						<div class="form-group">
-							<button type="button" class="btn btn-primary" style="float:right">Créer</button>
+							<button type="button" class="btn btn-primary" style="float:right">CrÃ©er</button>
 						</div>
 					</form>
 				</div>
@@ -44,12 +49,12 @@
 								<form class="form-inline">
 									<select id="select-project" class="form-control">
 										<!-- TODELETE test en dur -->
-										<option>Test de BD<option>
-										<!---->
+										<option>Test de BD</option>
+										<!-- -->
 									</select>
 									<button type="button" class="btn btn-primary">Charger</button>
 								</form>
-								<a href="#">Paramètres avancés »</a>
+								<a href="#">ParamÃ¨tres avancÃ©s Â»</a>
 							</div>
 						</div>
 					</div>
@@ -65,7 +70,7 @@
 										<div class="panel-body">
 											<form>
 												<div class="form-group inline-block" style="margin-right: 10px">
-													<label>Prénom</label>
+													<label>PrÃ©nom</label>
 													<input class="form-control" type="text">
 												</div>
 												<div class="form-group inline-block">
@@ -73,7 +78,7 @@
 													<input class="form-control" type="text">
 												</div>
 												<div class="form-group">
-													<label>Métier(s)</label>
+													<label>MÃ©tier(s)</label>
 													<select class="form-control"></select>
 												</div>
 												<button type="button" class="btn btn-primary">Ajouter</button>
@@ -92,7 +97,7 @@
 												</div>
 												<hr>
 												<div class="form-group inline-block" style="margin-right: 10px">
-													<label>Prénom</label>
+													<label>PrÃ©nom</label>
 													<input class="form-control" type="text">
 												</div>
 												<div class="form-group inline-block">
@@ -100,7 +105,7 @@
 													<input class="form-control" type="text">
 												</div>
 												<div class="form-group">
-													<label>Métier(s)</label>
+													<label>MÃ©tier(s)</label>
 													<select class="form-control"></select>
 												</div>
 												<button type="button" class="btn btn-primary">Modifier</button>
@@ -116,7 +121,7 @@
 												<div class="form-group">
 													<label>Contributeur</label>
 													<select class="form-control inline-select"></select>
-												<div id="delete-checkboxes"></div>
+													<div id="delete-checkboxes"></div>
 												</div>
 												<button type="button" class="btn btn-primary">Supprimer</button>
 											</form>
@@ -126,10 +131,15 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			
+					
+					<!-- section qui presente l'illustration des acteurs, zoomable -->
+					<div id="d3-illustration">
+						<div id="chart"></div>
+						<!-- Mettre ce code dans "index.js" -->
+						<script src="js/zoomableTreemap.js"></script>
+					</div>
+				</div> 
+			</div>
 		</div>
-		
-		
 	</body>
 </html>
