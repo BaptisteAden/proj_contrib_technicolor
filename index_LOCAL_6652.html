@@ -8,8 +8,6 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/d3.min.js"></script>
         <script src="js/index.js"></script>
-        <script src="js/functions.js"></script>
-        <script src="js/config.js"></script>
         <title>Suivi de contributions</title>
         <!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
     </head>
@@ -134,61 +132,30 @@
                         </div>
                     </div>
 
-                    <!-- section qui presente l'illustration des acteurs zoomable -->
+                    <!-- section qui presente l'illustration des acteurs, zoomable -->
                     <div id="d3-illustration">
                         <div id="chart"></div>
                         <!-- Mettre ce code dans "index.js" -->
                         <script src="js/zoomableTreemap.js"></script>
                     </div>
-
-                    <!-- Tableaux des contributions -->
-                    <br><h2> Contributions des personnes </h2><br>
-                    <table id="tabPersonnes" class="table table-striped">
-                        <tr>
-                            <th>Personne</th>
-                            <th>Contribution dans le corps de métier</th>
-                            <th>Contribution dans le bloc global</th>
-                            <th>Contribution totale</th>
-                        </tr>
-                    </table>
-
-                    <br><h2> Contributions des corps de métier </h2><br>
-                    <table id="tabCorpsMetier" class="table table-striped">
-                        <tr>
-                            <th>Corps de métier</th>
-                            <th>Contribution dans le bloc global</th>
-                            <th>Contribution totale</th>	
-                        </tr>
-                    </table>
-
-                    <br><h2> Contributions des blocs globaux </h2><br>
-                    <table id="tabGlobal" class="table table-striped">
-                        <tr>
-                            <th>Bloc global</th>
-                            <th>Contribution totale</th>
-                        </tr>
-                    </table>
-
                 </div> 
             </div>
         </div>
 
-        <!--
+
         <svg id="fdp" width="100" height="100" style="cursor:pointer">
-                 <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-                 Sorry, your browser does not support inline SVG.
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        Sorry, your browser does not support inline SVG.
         </svg> 
         <script>
-                $('#fdp').click(function(){
-                        console.log( $(this).children() );
-                        $('#fdp').children("circle").animate({
-                                width: 500,
-                                height: 500
-                        }, 1500);
-                });
-        </script>-->
-
-
+            $('#fdp').click(function () {
+                console.log($(this).children());
+                $('#fdp').children("circle").animate({
+                    width: 500,
+                    height: 500
+                }, 1500);
+            });
+        </script>
 
     </body>
 </html>
