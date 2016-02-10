@@ -25,7 +25,7 @@
 		},
 		"editeurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.001,
 			"metriques" : [
 				"Montant accordé à l'équipe production",
 				"Nombre de contacts fournis",

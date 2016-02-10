@@ -99,7 +99,7 @@ function computeAllContributions(json){
 					for(var i=0; i<Object.keys(objCorpsMetier).length-3; i++){	
 						personne = objCorpsMetier[i];
 						ret.personnes[personne.nom + i] = {};
-						ret.personnes[personne.nom + i].corpsMetier = personne.contribBrute / objCorpsMetier.contribBrute;
+						ret.personnes[personne.nom + i].corpsMetier = personne.contribBrute / objCorpsMetier.contribBrute * objCorpsMetier.poids;
 						ret.personnes[personne.nom + i].blocGlobal = ret.personnes[personne.nom + i].corpsMetier * ret.corpsMetier[keyCorpsMetier].blocGlobal;
 						ret.personnes[personne.nom + i].total = ret.personnes[personne.nom + i].blocGlobal * ret.globales[keyGlobal];
 					}
@@ -128,7 +128,7 @@ function generateD3JSON(json){
 							"key": personne.nom,
 							"region": keyGlobal,
 							"subregion": keyCorpsMetier,
-							"contribution": computeContribution(3, personne),
+							"contribution": getPercentage(personne.contribBrute / objCorpsMetier.contribBrute * objCorpsMetier.poids),
 							"value": 1
 						});
 					}
