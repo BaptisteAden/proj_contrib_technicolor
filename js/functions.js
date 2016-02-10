@@ -38,8 +38,29 @@ function updateJSON(json){
 * @param blocParent Le parent du bloc dont on souhaite calculer la contribution.
 * @return Chaine de caracteres representant la contribution du bloc souhaite en pourcentage.
 */
-function computeContribution(bloc, blocParent){
-	return ( getPercentage(bloc.contribBrute / blocParent.contribBrute) );
+function computeContribution(blocLevel, bloc){
+	var ret = 0;
+	switch(blocLevel){
+		case 1:
+			break;
+			$.each(bloc, function(keyCorpsMetier, corpsMetier){
+				ret += computeContribution(2, corpsMetier);
+			});
+			break;
+		case 2:
+			$.each(bloc, function(keyPersonne, personne){
+				ret += computeContribution(3, personne);
+			});
+			break;
+		case 3:
+			for(var i=0; i<bloc.valeurs.length; i++){
+				ret += bloc.poids[i] * bloc.valeurs[i];
+			}
+			break;
+		default:
+			ret = null;
+	}
+	return ret;
 }
 
 /* Retourne une contribution en pourcentage.
@@ -81,6 +102,35 @@ function computeAllContributions(json){
 						ret.personnes[personne.nom + i].corpsMetier = personne.contribBrute / objCorpsMetier.contribBrute;
 						ret.personnes[personne.nom + i].blocGlobal = ret.personnes[personne.nom + i].corpsMetier * ret.corpsMetier[keyCorpsMetier].blocGlobal;
 						ret.personnes[personne.nom + i].total = ret.personnes[personne.nom + i].blocGlobal * ret.globales[keyGlobal];
+					}
+				}
+			});
+		}
+	});
+	return ret;
+}
+
+
+function generateD3JSON(json){
+	var ret = [];
+	var personne;
+	
+	//Parcours des blocs globaux
+	$.each(json, function(keyGlobal, objGlobal){
+		if(keyGlobal != "contribBrute"){
+			//Parcours des corps de metier
+			$.each(objGlobal, function(keyCorpsMetier, objCorpsMetier){
+				if(keyCorpsMetier != "contribBrute"){
+					//Parcours des personnes
+					for(var i=0; i<Object.keys(objCorpsMetier).length-3; i++){
+						personne = objCorpsMetier[i];
+						ret.push({
+							"key": personne.nom,
+							"region": keyGlobal,
+							"subregion": keyCorpsMetier,
+							"contribution": computeContribution(3, personne),
+							"value": 1
+						});
 					}
 				}
 			});

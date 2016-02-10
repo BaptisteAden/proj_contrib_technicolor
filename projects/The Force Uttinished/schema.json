@@ -108,7 +108,7 @@
 		},
 		"coloristes" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.0001,
 			"metriques" : [
 				"Nombre de pixels colorés",
 				"Nombre de couleurs utilisées"
