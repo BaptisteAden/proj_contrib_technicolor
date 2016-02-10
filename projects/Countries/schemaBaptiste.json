@@ -1,0 +1,197 @@
+{
+    "validation": {
+        "auteurs": {
+            "metriques": [
+                "Temps passé à expliciter ses idées à l'équipe production",
+                "Nombre de documents vérifiés",
+                "Nombre de présentations à l'éditeur"
+            ],
+            "0": {
+                "nom": "Auteur 1",
+                "poids": [1, 1, 1],
+                "valeurs": [3, 10, 1]
+            },
+            "1": {
+                "nom": "Auteur 2",
+                "poids": [1, 1, 1],
+                "valeurs": [100, 100, 10]
+            }
+        },
+        "editeurs": {
+            "metriques": [
+                "Montant accordé à l'équipe production",
+                "Nombre de contacts fournis",
+                "Nombre de bandes dessinées commercialisées"
+            ],
+            "0": {
+                "nom": "Éditeur 1",
+                "poids": [1, 1, 1],
+                "valeurs": [0, 1, 50]
+            },
+            "1": {
+                "nom": "Éditeur 2",
+                "poids": [1, 1, 1],
+                "valeurs": [100000, 20, 100000]
+            }
+        }
+    },
+    "production": {
+        "scenaristes": {
+            "metriques": [
+                "Nombre d'essais de scénarios avant version finale",
+                "Nombre de mots dans le scénario"
+            ],
+            "0": {
+                "nom": "Scénariste 1",
+                "poids": [1, 1],
+                "valeurs": [0, 100]
+            },
+            "1": {
+                "nom": "Scénariste 2",
+                "poids": [1, 1],
+                "valeurs": [10, 10000]
+            }
+        },
+        "dessinateurs": {
+            "metriques": [
+                "Nombre de vignettes dessinées"
+            ],
+            "0": {
+                "nom": "Dessinateur 1",
+                "poids": [1],
+                "valeurs": [38]
+            },
+            "1": {
+                "nom": "Dessinateur 2",
+                "poids": [1],
+                "valeurs": [150]
+            }
+        },
+        "lettreurs": {
+            "metriques": [
+                "Nombre de bulles de dialogue remplies",
+                "Nombre d'onomatopées écrites"
+            ],
+            "0": {
+                "nom": "Lettreur 1",
+                "poids": [1, 1],
+                "valeurs": [77, 10]
+            },
+            "1": {
+                "nom": "Lettreur 2",
+                "poids": [1, 1],
+                "valeurs": [250, 60]
+            }
+        },
+        "coloristes": {
+            "metriques": [
+                "Nombre de pixels colorés",
+                "Nombre de couleurs utilisées"
+            ],
+            "0": {
+                "nom": "Coloriste 1",
+                "poids": [1, 1],
+                "valeurs": [10000000, 1000000]
+            },
+            "1": {
+                "nom": "Coloriste 2",
+                "poids": [1, 1],
+                "valeurs": [35912290, 4098439]
+            }
+        },
+        "encreurs": {
+            "metriques": [
+                "Nombre de vignettes encrées"
+            ],
+            "0": {
+                "nom": "Encreur 1",
+                "poids": [1],
+                "valeurs": [38]
+            },
+            "1": {
+                "nom": "Encreur 2",
+                "poids": [1],
+                "valeurs": [150]
+            }
+        },
+        "correcteurs": {
+            "metriques": [
+                "Nombre de bulles de dialogue vérifiées",
+                "Nombre de vignettes vérifiées",
+                "Nombre de corrections apportées"
+            ],
+            "0": {
+                "nom": "Correcteur 1",
+                "poids": [1, 1, 1],
+                "valeurs": [0, 188, 1]
+            },
+            "1": {
+                "nom": "Correcteur 2",
+                "poids": [1, 1, 1],
+                "valeurs": [327, 0, 50]
+            }
+        }
+    },
+    "edition": {
+        "designers": {
+            "metriques": [
+                "Nombre de couvertures réalisées pour version finale"
+            ],
+            "0": {
+                "nom": "Designer 1",
+                "poids": [1],
+                "valeurs": [1]
+            },
+            "1": {
+                "nom": "Designer 2",
+                "poids": [1],
+                "valeurs": [8]
+            }
+        },
+        "annexeurs": {
+            "metriques": [
+                "Nombre d'annexes réalisées"
+            ],
+            "0": {
+                "nom": "Annexeur 1",
+                "poids": [1],
+                "valeurs": [2]
+            },
+            "1": {
+                "nom": "Annexeur 2",
+                "poids": [1],
+                "valeurs": [12]
+            }
+        },
+        "imprimeurs": {
+            "metriques": [
+                "Nombre d'exemplaires imprimés"
+            ],
+            "0": {
+                "nom": "Imprimeur 1",
+                "poids": [1],
+                "valeurs": [50]
+            },
+            "1": {
+                "nom": "Imprimeur 2",
+                "poids": [1],
+                "valeurs": [100000]
+            }
+        },
+        "relieurs": {
+            "metriques": [
+                "Nombre d'exemplaires assemblés"
+            ],
+            "0": {
+                "nom": "Relieur 1",
+                "poids": [1],
+                "valeurs": [50]
+            },
+            "1": {
+                "nom": "Relieur 2",
+                "poids": [1],
+                "valeurs": [100000]
+            }
+        }
+    }
+}

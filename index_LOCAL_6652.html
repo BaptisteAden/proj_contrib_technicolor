@@ -1,0 +1,161 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/d3.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/index.js"></script>
+        <title>Suivi de contributions</title>
+        <!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
+    </head>
+    <body>
+        <!-- TECHNICOLOR'S DIV -->
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#pane-new">Nouveau</a></li>
+                <li><a data-toggle="tab" href="#pane-project">Projet</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="pane-new" class="margin tab-pane fade in active">
+                    <form>
+                        <div class="form-group">
+                            <label>Nom du projet</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Type de production</label>
+                            <select class="form-control">
+                                <option>Bande dessinée</option>
+                                <!-- Add other production types here -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary" style="float:right">Créer</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="pane-project" class="margin tab-pane fade">
+                    <div id="current-project" class="wrapper panel panel-primary">
+                        <div class="panel-heading wrapper-header" data-target="#current-project-toggle" data-toggle="collapse">
+                            <span class="wrapper-title">Projet actuel : </span><span class="glyphicon glyphicon-collapse-down wrapper-icon"></span>
+                        </div>
+                        <div id="current-project-toggle" class="collapse">
+                            <div class="panel-body">
+                                <form class="form-inline">
+                                    <select id="select-project" class="form-control">
+                                        <!-- TODELETE test en dur -->
+                                        <option>Test de BD</option>
+                                        <!-- -->
+                                    </select>
+                                    <button type="button" class="btn btn-primary">Charger</button>
+                                </form>
+                                <a href="#">Paramètres avancés »</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="contributors-management" class="wrapper panel panel-primary">
+                        <div class="panel-heading wrapper-header" data-target="#contributors-management-toggle" data-toggle="collapse">
+                            <span class="wrapper-title">Gestion des contributeurs</span><span class="glyphicon glyphicon-collapse-down wrapper-icon"></span>
+                        </div>
+                        <div id="contributors-management-toggle" class="collapse">
+                            <div id="sub-panels-group" class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" data-target="#add-panel" data-parent="#sub-panels-group" data-toggle="collapse">Ajouter un contributeur</div>
+                                    <div id="add-panel" class="collapse">
+                                        <div class="panel-body">
+                                            <form>
+                                                <div class="form-group inline-block" style="margin-right: 10px">
+                                                    <label>Prénom</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                                <div class="form-group inline-block">
+                                                    <label>Nom</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Métier(s)</label>
+                                                    <select class="form-control"></select>
+                                                </div>
+                                                <button type="button" class="btn btn-primary">Ajouter</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" data-target="#update-panel" data-parent="#sub-panels-group" data-toggle="collapse">Modifier un contributeur</div>
+                                    <div id="update-panel" class="collapse">
+                                        <div class="panel-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Contributeur</label>
+                                                    <select class="form-control inline-select"></select>
+                                                </div>
+                                                <hr>
+                                                <div class="form-group inline-block" style="margin-right: 10px">
+                                                    <label>Prénom</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                                <div class="form-group inline-block">
+                                                    <label>Nom</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Métier(s)</label>
+                                                    <select class="form-control"></select>
+                                                </div>
+                                                <button type="button" class="btn btn-primary">Modifier</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" data-target="#delete-panel" data-parent="#sub-panels-group" data-toggle="collapse">Supprimer un contributeur</div>
+                                    <div id="delete-panel" class="collapse">
+                                        <div class="panel-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Contributeur</label>
+                                                    <select class="form-control inline-select"></select>
+                                                    <div id="delete-checkboxes"></div>
+                                                </div>
+                                                <button type="button" class="btn btn-primary">Supprimer</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>						
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- section qui presente l'illustration des acteurs, zoomable -->
+                    <div id="d3-illustration">
+                        <div id="chart"></div>
+                        <!-- Mettre ce code dans "index.js" -->
+                        <script src="js/zoomableTreemap.js"></script>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+
+        <svg id="fdp" width="100" height="100" style="cursor:pointer">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        Sorry, your browser does not support inline SVG.
+        </svg> 
+        <script>
+            $('#fdp').click(function () {
+                console.log($(this).children());
+                $('#fdp').children("circle").animate({
+                    width: 500,
+                    height: 500
+                }, 1500);
+            });
+        </script>
+
+    </body>
+</html>

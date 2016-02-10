@@ -162,6 +162,7 @@ function main(o, data) {
                 .append("title")
                 .text(function (d) {
                     return d.key + " (" + formatNumber(d.value) + ")";
+                    //return d.key + " (" + 10 + ")"; //test
                 });
         children.append("text")
                 .attr("class", "ctext")
@@ -287,15 +288,17 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("projects/Countries/schema.json", function (err, res) {
+    d3.json("projects/Countries/schemaInspire.json", function (err, res) {
         if (!err) {
             console.log(res);
             var data = d3.nest().key(function (d) {
                 return d.region;
             }).key(function (d) {
                 return d.subregion;
+            }).key(function (d) {
+                return d.contribution;
             }).entries(res);
-            main({title: "World Population"}, {key: "World", values: data});
+            main({title: "Représentation"}, {key: "Contribution totale", values: data});
         }
     });
 }
