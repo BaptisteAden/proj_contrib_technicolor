@@ -4,7 +4,7 @@
 		"contribBrute" : 0,
 		"auteurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 2,
 			"metriques" : [
 				"Temps passé à expliciter ses idées à l'équipe production",
 				"Nombre de documents vérifiés",
@@ -25,7 +25,7 @@
 		},
 		"editeurs" : {
 			"contribBrute" : 0,
-			"poids" : 0.001,
+			"poids" : 0.002,
 			"metriques" : [
 				"Montant accordé à l'équipe production",
 				"Nombre de contacts fournis",
@@ -49,7 +49,7 @@
 		"contribBrute" : 0,
 		"scenaristes" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.05,
 			"metriques" : [
 				"Nombre d'essais de scénarios avant version finale",
 				"Nombre de mots dans le scénario"
@@ -88,7 +88,7 @@
 		},
 		"lettreurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.05,
 			"metriques" : [
 				"Nombre de bulles de dialogue remplies",
 				"Nombre d'onomatopées écrites"
@@ -108,7 +108,7 @@
 		},
 		"coloristes" : {
 			"contribBrute" : 0,
-			"poids" : 0.0001,
+			"poids" : 0.000005,
 			"metriques" : [
 				"Nombre de pixels colorés",
 				"Nombre de couleurs utilisées"
@@ -128,7 +128,7 @@
 		},
 		"encreurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.05,
 			"metriques" : [
 				"Nombre de vignettes encrées"
 			],
@@ -147,7 +147,7 @@
 		},
 		"correcteurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.05,
 			"metriques" : [
 				"Nombre de bulles de dialogue vérifiées",
 				"Nombre de vignettes vérifiées",
@@ -161,7 +161,7 @@
 			},
 			"1" : {
 				"nom" : "Correcteur 2",
-				"poids" : [1,1,1],
+				"poids" : [0.4,1,1],
 				"valeurs" : [327,0,50],
 				"contribBrute" : 0
 			}
@@ -171,7 +171,7 @@
 		"contribBrute" : 0,
 		"designers" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 10,
 			"metriques" : [
 				"Nombre de couvertures réalisées pour version finale"
 			],
@@ -196,20 +196,20 @@
 			],
 			"0" : {
 				"nom" : "Annexeur 1",
-				"poids" : [1],
+				"poids" : [10],
 				"valeurs" : [2],
 				"contribBrute" : 0
 			},
 			"1" : {
 				"nom" : "Annexeur 2",
-				"poids" : [1],
+				"poids" : [10],
 				"valeurs" : [12],
 				"contribBrute" : 0
 			}
 		},
 		"imprimeurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.001,
 			"metriques" : [
 				"Nombre d'exemplaires imprimés"
 			],
@@ -228,7 +228,7 @@
 		},
 		"relieurs" : {
 			"contribBrute" : 0,
-			"poids" : 1,
+			"poids" : 0.001,
 			"metriques" : [
 				"Nombre d'exemplaires assemblés"
 			],
