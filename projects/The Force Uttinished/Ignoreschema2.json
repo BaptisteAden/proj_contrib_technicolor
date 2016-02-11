@@ -1,5 +1,27 @@
-﻿{
-    "contribBrute": 0,
+﻿[
+    {"contribBrute": 0},
+    {"validation":
+        "auteurs": [
+            "0": {
+                "nom": "Auteur 1",
+                "poids": [1, 1, 1],
+                "valeurs": [3, 10, 1],
+                "contribBrute": 0
+            },
+            "1": {
+                "nom": "Auteur 2",
+                "poids": [1, 1, 1],
+                "valeurs": [100, 100, 10],
+                "contribBrute": 0
+            }
+        ]
+    },
+    {"production": }
+    {"edition": }
+]
+
+{
+    ,
     "validation": {
         "contribBrute": 0,
         "auteurs": {

@@ -1,0 +1,65 @@
+[
+  {
+    "key": "Auteur 1",
+    "region": "Validation 30%",
+    "subregion": "Auteurs 50%",
+    "contribution": "10%",
+    "value": 1
+  },
+  {
+    "key": "Auteur 2",
+    "region": "Validation",
+    "subregion": "Auteurs 50%",
+    "contribution": "90%",
+    "value": 1
+  },
+  {
+    "key": "Coloriste 1",
+    "region": "Production 60%",
+    "subregion": "Coloristes 33%",
+    "contribution": "10%",
+    "value": 1
+  },
+  {
+    "key": "Coloriste 2",
+    "region": "Production 60%",
+    "subregion": "Coloristes 33%",
+    "contribution": "23%",
+    "value": 1
+  },
+  {
+    "key": "Thierry Maskov",
+    "region": "Production 60%",
+    "subregion": "Correcteurs de texte 17%",
+    "contribution": "17%",
+    "value": 1
+  },
+  {
+    "key": "Mickey Johnson",
+    "region": "Production 60%",
+    "subregion": "Dessinateurs 50%",
+    "contribution": "25%",
+    "value": 1
+  },
+  {
+    "key": "Mickey Johnson Jr",
+    "region": "Production 60%",
+    "subregion": "Dessinateurs 50%",
+    "contribution": "15%",
+    "value": 1
+  },
+  {
+    "key": "Mickey Johnson Senior",
+    "region": "Production 60%",
+    "subregion": "Dessinateurs 50%",
+    "contribution": "10%",
+    "value": 1
+  },
+  {
+    "key": "Relieur 1",
+    "region": "Edition 10%",
+    "subregion": "Relieurs 10%",
+    "contribution": "100%",
+    "value": 1
+  }
+]

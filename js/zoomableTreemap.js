@@ -288,7 +288,10 @@ function main(o, data) {
 }
 
 if (window.location.hash === "") {
-    d3.json("projects/Countries/schemaInspire.json", function (err, res) {
+    //var jsonData = generateD3JSON("projects/The Force Uttinished/schema.json");
+    //console.log(jsonData);
+    d3.json("projects/d3data.json", function (err, res) {
+    //d3.json(jsonData, function (err, res) {
         if (!err) {
             console.log(res);
             var data = d3.nest().key(function (d) {
