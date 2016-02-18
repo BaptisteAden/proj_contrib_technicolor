@@ -17,12 +17,12 @@
 		<!-- TECHNICOLOR'S DIV -->
 		<div>
 			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" href="#pane-new">Nouveau</a></li>
-				<li><a data-toggle="tab" href="#pane-project">Projet</a></li>
+				<li><a data-toggle="tab" href="#pane-new">Nouveau</a></li>
+				<li class="active"><a data-toggle="tab" href="#pane-project">Projet</a></li>
 			</ul>
 			
 			<div class="tab-content">
-				<div id="pane-new" class="margin tab-pane fade in active">
+				<div id="pane-new" class="margin tab-pane fade">
 					<form>
 						<div class="form-group">
 							<label>Nom du projet</label>
@@ -41,7 +41,7 @@
 					</form>
 				</div>
 				
-				<div id="pane-project" class="margin tab-pane fade">
+				<div id="pane-project" class="margin tab-pane fade active in">
 					<div id="current-project" class="wrapper panel panel-primary">
 						<div class="panel-heading wrapper-header" data-target="#current-project-toggle" data-toggle="collapse">
 							<span class="wrapper-title">Projet actuel : </span><span class="glyphicon glyphicon-collapse-down wrapper-icon"></span>
@@ -135,7 +135,7 @@
 					</div>
 					
 					<!-- section qui presente l'illustration des acteurs zoomable -->
-					<div id="d3-illustration" style="margin-left: 260px">
+					<div id="d3-illustration">
 						<div id="chart"></div>
 						<!-- Mettre ce code dans "index.js" -->
 						<script src="js/zoomableTreemap.js"></script>

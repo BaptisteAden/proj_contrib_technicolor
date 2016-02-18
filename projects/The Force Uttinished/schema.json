@@ -6,9 +6,9 @@
 			"contribBrute" : 0,
 			"poids" : 2,
 			"metriques" : [
-				"Temps passé à expliciter ses idées à l'équipe production",
-				"Nombre de documents vérifiés",
-				"Nombre de présentations à l'éditeur"
+				"Temps passe à expliciter ses idees à l'equipe production",
+				"Nombre de documents verifies",
+				"Nombre de presentations à l'editeur"
 			],
 			"0" : {
 				"nom" : "Auteur 1",
@@ -27,20 +27,20 @@
 			"contribBrute" : 0,
 			"poids" : 0.002,
 			"metriques" : [
-				"Montant accordé à l'équipe production",
+				"Montant accorde à l'equipe production",
 				"Nombre de contacts fournis",
-				"Nombre de bandes dessinées commercialisées"
+				"Nombre de bandes dessinees commercialisees"
 			],
 			"0" : {
-				"nom" : "Éditeur 1",
+				"nom" : "Editeur 1",
 				"poids" : [1,1,1],
-				"valeurs" : [0,1,50],
+				"valeurs" : [1000,1,500],
 				"contribBrute" : 0
 			},
 			"1" : {
-				"nom" : "Éditeur 2",
+				"nom" : "Editeur 2",
 				"poids" : [1,1,1],
-				"valeurs" : [100000,20,100000],
+				"valeurs" : [10000,20,10000],
 				"contribBrute" : 0
 			}
 		}
@@ -51,17 +51,17 @@
 			"contribBrute" : 0,
 			"poids" : 0.05,
 			"metriques" : [
-				"Nombre d'essais de scénarios avant version finale",
-				"Nombre de mots dans le scénario"
+				"Nombre d'essais de scenarios avant version finale",
+				"Nombre de mots dans le scenario"
 			],
 			"0" : {
-				"nom" : "Scénariste 1",
+				"nom" : "Scenariste 1",
 				"poids" : [1,1],
 				"valeurs" : [0,100],
 				"contribBrute" : 0
 			},
 			"1" : {
-				"nom" : "Scénariste 2",
+				"nom" : "Scenariste 2",
 				"poids" : [1,1],
 				"valeurs" : [10,10000],
 				"contribBrute" : 0
@@ -71,7 +71,7 @@
 			"contribBrute" : 0, 
 			"poids" : 1,
 			"metriques" : [
-				"Nombre de vignettes dessinées"
+				"Nombre de vignettes dessinees"
 			],
 			"0" : {
 				"nom" : "Dessinateur 1",
@@ -91,7 +91,7 @@
 			"poids" : 0.05,
 			"metriques" : [
 				"Nombre de bulles de dialogue remplies",
-				"Nombre d'onomatopées écrites"
+				"Nombre d'onomatopees ecrites"
 			],
 			"0" : {
 				"nom" : "Lettreur 1",
@@ -110,8 +110,8 @@
 			"contribBrute" : 0,
 			"poids" : 0.000005,
 			"metriques" : [
-				"Nombre de pixels colorés",
-				"Nombre de couleurs utilisées"
+				"Nombre de pixels colores",
+				"Nombre de couleurs utilisees"
 			],
 			"0" : {
 				"nom" : "Coloriste 1",
@@ -130,7 +130,7 @@
 			"contribBrute" : 0,
 			"poids" : 0.05,
 			"metriques" : [
-				"Nombre de vignettes encrées"
+				"Nombre de vignettes encrees"
 			],
 			"0" : {
 				"nom" : "Encreur 1",
@@ -149,9 +149,9 @@
 			"contribBrute" : 0,
 			"poids" : 0.05,
 			"metriques" : [
-				"Nombre de bulles de dialogue vérifiées",
-				"Nombre de vignettes vérifiées",
-				"Nombre de corrections apportées"
+				"Nombre de bulles de dialogue verifiees",
+				"Nombre de vignettes verifiees",
+				"Nombre de corrections apportees"
 			],
 			"0" : {
 				"nom" : "Correcteur 1",
@@ -173,7 +173,7 @@
 			"contribBrute" : 0,
 			"poids" : 10,
 			"metriques" : [
-				"Nombre de couvertures réalisées pour version finale"
+				"Nombre de couvertures realisees pour version finale"
 			],
 			"0" : {
 				"nom" : "Designer 1",
@@ -192,7 +192,7 @@
 			"contribBrute" : 0,
 			"poids" : 1,
 			"metriques" : [
-				"Nombre d'annexes réalisées"
+				"Nombre d'annexes realisees"
 			],
 			"0" : {
 				"nom" : "Annexeur 1",
@@ -211,7 +211,7 @@
 			"contribBrute" : 0,
 			"poids" : 0.001,
 			"metriques" : [
-				"Nombre d'exemplaires imprimés"
+				"Nombre d'exemplaires imprimes"
 			],
 			"0" : {
 				"nom" : "Imprimeur 1",
@@ -230,7 +230,7 @@
 			"contribBrute" : 0,
 			"poids" : 0.001,
 			"metriques" : [
-				"Nombre d'exemplaires assemblés"
+				"Nombre d'exemplaires assembles"
 			],
 			"0" : {
 				"nom" : "Relieur 1",

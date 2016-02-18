@@ -1,3 +1,6 @@
+var d4test;
+var level = 0;
+
 window.addEventListener('message', function (e) {
     var opts = e.data.opts,
             data = e.data.data;
@@ -15,6 +18,14 @@ var defaults = {
 };
 
 function main(o, data) {
+	$.getJSON('projects/The Force Uttinished/schema.json', function(json) {
+		updateJSON(json)
+		var contribs = computeAllContributions(json);
+		//d4test=contribs;
+		//console.log(json);
+		//console.log(contribs);
+		
+	var level = 0;
     var root,
             opts = $.extend(true, {}, defaults, o),
             formatNumber = d3.format(opts.format),
@@ -77,11 +88,12 @@ function main(o, data) {
     } else {
         root = data;
     }
+	
+    //console.log(root);
 
     initialize(root);
     accumulate(root);
     layout(root);
-    console.log(root);
     display(root);
 
     if (window.parent !== window) {
@@ -132,7 +144,11 @@ function main(o, data) {
     function display(d) {
         grandparent
                 .datum(d.parent)
-                .on("click", transition)
+                .on("click", function(d,i){
+					if(!transitioning && level != 0)
+						level--; 
+					transition(d); 
+				}) //MODIF : pour savoir le niveau du schema
                 .select("text")
                 .text(name(d));
 
@@ -148,7 +164,11 @@ function main(o, data) {
             return d._children;
         })
                 .classed("children", true)
-                .on("click", transition);
+                .on("click", function(d,i){ 
+					if(!transitioning)
+						level++;
+					transition(d); 
+				}); //MODIF : pour savoir le niveau du schema
 
         var children = g.selectAll(".child")
                 .data(function (d) {
@@ -161,13 +181,24 @@ function main(o, data) {
                 .call(rect)
                 .append("title")
                 .text(function (d) {
-                    return d.key + " (" + formatNumber(d.value) + ")";
-                    //return d.key + " (" + 10 + ")"; //test
+                    return d.key /*+ " (" + formatNumber(d.value) + ")"*/;
                 });
         children.append("text")
                 .attr("class", "ctext")
                 .text(function (d) {
-                    return d.key;
+					//console.log(d);
+                    //return d.key /*+ " - " + contribs.[personnes/corpsMetier/globales].[d.key]. */;  // ICI CONTRIBUTIONS DES SOUS BLOCS
+					switch(level){
+						case 0:
+							return d.key + " - " + getPercentage(contribs.corpsMetier[d.key].total);
+							break;
+						case 1:
+							return d.key + " - " + getPercentage(contribs.personnes[d.key].blocGlobal);
+					}
+					/* vue globale : contribs globale dans totale + contribs corpsMetier dans totale
+					*  vue corpsMetier : contribs corpsMetier dans globale + contribs personne dans blocs
+					*  vue personnes : contribs personnes dans corpsMetier
+					*/
                 })
                 .call(text2);
 
@@ -186,7 +217,18 @@ function main(o, data) {
         t.append("tspan")
                 .attr("dy", "1.0em")
                 .text(function (d) {
-                    return formatNumber(d.value);
+					//console.log(d);
+					//return formatNumber(d.value);
+					switch(level){
+						case 0:
+							return getPercentage(contribs.globales[d.key]);
+							break;
+						case 1:
+							return getPercentage(contribs.corpsMetier[d.key].blocGlobal);
+							break;
+						case 2:
+							return getPercentage(contribs.personnes[d.key].corpsMetier);
+					}
                 });
         t.call(text);
 
@@ -196,6 +238,7 @@ function main(o, data) {
                 });
 
         function transition(d) {
+			//console.log(level);
             if (transitioning || !d)
                 return;
             transitioning = true;
@@ -238,32 +281,19 @@ function main(o, data) {
     }
 
     function text(text) {
-        text.selectAll("tspan")
-                .attr("x", function (d) {
-                    return x(d.x) + 6;
-                })
-        text.attr("x", function (d) {
-            return x(d.x) + 6;
-        })
-                .attr("y", function (d) {
-                    return y(d.y) + 6;
-                })
-                .style("opacity", function (d) {
-                    return this.getComputedTextLength() < x(d.x + d.dx) - x(d.x) ? 1 : 0;
-                });
-    }
+		text.selectAll("tspan")
+			.attr("x", function(d){ return x(d.x) + 6; })
+		text.attr("x", function(d){ return x(d.x) + 6; })
+			.attr("y", function(d){ return y(d.y) + 6; })
+			.style("opacity", function(d) { return this.getComputedTextLength() < x(d.x + d.dx) - x(d.x) ? 1 : 0; });
+	}
 
-    function text2(text) {
-        text.attr("x", function (d) {
-            return x(d.x + d.dx) - this.getComputedTextLength() - 6;
-        })
-                .attr("y", function (d) {
-                    return y(d.y + d.dy) - 6;
-                })
-                .style("opacity", function (d) {
-                    return this.getComputedTextLength() < x(d.x + d.dx) - x(d.x) ? 1 : 0;
-                });
-    }
+  function text2(text) {
+	//console.log(text);  //PROBLEME DES X MAL CALCULES
+    text.attr("x", function(d) { console.log(this.getComputedTextLength()); return x(d.x + d.dx) - this.getComputedTextLength() - 6; })
+        .attr("y", function(d) { return y(d.y + d.dy) - 6; })
+        .style("opacity", function(d) { return this.getComputedTextLength() < x(d.x + d.dx) - x(d.x) ? 1 : 0; });
+  }
 
     function rect(rect) {
         rect.attr("x", function (d) {
@@ -281,23 +311,26 @@ function main(o, data) {
     }
 
     function name(d) {
+		//console.log(d.parent);
+		//console.log(d);
         return d.parent
-                ? name(d.parent) + " / " + d.key + " (" + formatNumber(d.value) + ")"
-                : d.key + " (" + formatNumber(d.value) + ")";
+                ? name(d.parent) + " > " + d.key /*+ " (" + formatNumber(d.value) + ")"  MODIF*/
+                : d.key /*+ " (" + formatNumber(d.value) + ")0"*/;
     }
+	});
+
 }
 
 if (window.location.hash === "") {
-    d3.json("projects/Countries/schemaInspire.json", function (err, res) {
+    d3.json("projects/The Force Uttinished/d3data.json", function (err, res) {
         if (!err) {
-            console.log(res);
             var data = d3.nest().key(function (d) {
-                return d.region;
+                return d.global;
             }).key(function (d) {
-                return d.subregion;
-            }).key(function (d) {
-                return d.contribution;
+                return d.corpsMetier;
             }).entries(res);
+				//console.log(data);
+				d3test = data;
             main({title: "Représentation"}, {key: "Contribution totale", values: data});
         }
     });

@@ -24,7 +24,7 @@ $(document).ready(function(){
 		
 		$.each(contribs.personnes, function(keyPersonne, contribsPersonne){
 			$('#tabPersonnes').append( $('<tr>')
-				.append( $('<td>').text(keyPersonne.slice(0,-1)) )
+				.append( $('<td>').text(keyPersonne) )
 				//TMP
 				.append( $('<td>') )
 				.append( $('<td>') )

@@ -1,0 +1,195 @@
+[
+	{
+		"key":"Auteur 1",
+		"global":"validation",
+		"corpsMetier":"auteurs",
+		"contribTotale":"1.46%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"6.25%",
+		"value":1
+	},{
+		"key":"Auteur 2",
+		"global":"validation",
+		"corpsMetier":"auteurs",
+		"contribTotale":"21.9%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"93.75%",
+		"value":1
+	},{
+		"key":"Editeur 1",
+		"global":"validation",
+		"corpsMetier":"editeurs",
+		"contribTotale":"0.16%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"0.03%",
+		"value":1
+	},{
+		"key":"Editeur 2",
+		"global":"validation",
+		"corpsMetier":"editeurs",
+		"contribTotale":"2.09%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"99.97%",
+		"value":1
+	},{
+		"key":"Scenariste 1",
+		"global":"production",
+		"corpsMetier":"scenaristes",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"0.99%",
+		"value":1
+	},{
+		"key":"Scenariste 2",
+		"global":"production",
+		"corpsMetier":"scenaristes",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"99.01%",
+		"value":1
+	},{
+		"key":"Dessinateur 1",
+		"global":"production",
+		"corpsMetier":"dessinateurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"20.21%",
+		"value":1
+	},{
+		"key":"Dessinateur 2",
+		"global":"production",
+		"corpsMetier":"dessinateurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"79.79%",
+		"value":1
+	},{
+		"key":"Lettreur 1",
+		"global":"production",
+		"corpsMetier":"lettreurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"21.91%",
+		"value":1
+	},{
+		"key":"Lettreur 2",
+		"global":"production",
+		"corpsMetier":"lettreurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"78.09%",
+		"value":1
+	},{
+		"key":"Coloriste 1",
+		"global":"production",
+		"corpsMetier":"coloristes",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"21.56%",
+		"value":1
+	},{
+		"key":"Coloriste 2",
+		"global":"production",
+		"corpsMetier":"coloristes",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"78.44%",
+		"value":1
+	},{
+		"key":"Encreur 1",
+		"global":"production",
+		"corpsMetier":"encreurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"20.21%",
+		"value":1
+	},{
+		"key":"Encreur 2",
+		"global":"production",
+		"corpsMetier":"encreurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"79.79%",
+		"value":1
+	},{
+		"key":"Correcteur 1",
+		"global":"production",
+		"corpsMetier":"correcteurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"51.11%",
+		"value":1
+	},{
+		"key":"Correcteur 2",
+		"global":"production",
+		"corpsMetier":"correcteurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"48.89%",
+		"value":1
+	},{
+		"key":"Designer 1",
+		"global":"edition",
+		"corpsMetier":"designers",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"11.11%",
+		"value":1
+	},{
+		"key":"Designer 2",
+		"global":"edition",
+		"corpsMetier":"designers",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"88.89%",
+		"value":1
+	},{
+		"key":"Annexeur 1",
+		"global":"edition",
+		"corpsMetier":"annexeurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"14.29%",
+		"value":1
+	},{
+		"key":"Annexeur 2",
+		"global":"edition",
+		"corpsMetier":"annexeurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"85.71%",
+		"value":1
+	},{
+		"key":"Imprimeur 1",
+		"global":"edition",
+		"corpsMetier":"imprimeurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"0.05%",
+		"value":1
+	},{
+		"key":"Imprimeur 2",
+		"global":"edition",
+		"corpsMetier":"imprimeurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"99.95%",
+		"value":1
+	},{
+		"key":"Relieur 1",
+		"global":"edition",
+		"corpsMetier":"relieurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"0.05%",
+		"value":1
+	},{
+		"key":"Relieur 2",
+		"global":"edition",
+		"corpsMetier":"relieurs",
+		"contribTotale":"6.25%",
+		"contribGlobale":"6.25%",
+		"contribCorpsMetier":"99.95%",
+		"value":1
+	}
+]

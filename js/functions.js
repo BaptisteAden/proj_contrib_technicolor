@@ -98,10 +98,10 @@ function computeAllContributions(json){
 					//Parcours des personnes
 					for(var i=0; i<Object.keys(objCorpsMetier).length-3; i++){	
 						personne = objCorpsMetier[i];
-						ret.personnes[personne.nom + i] = {};
-						ret.personnes[personne.nom + i].corpsMetier = personne.contribBrute / objCorpsMetier.contribBrute * objCorpsMetier.poids;
-						ret.personnes[personne.nom + i].blocGlobal = ret.personnes[personne.nom + i].corpsMetier * ret.corpsMetier[keyCorpsMetier].blocGlobal;
-						ret.personnes[personne.nom + i].total = ret.personnes[personne.nom + i].blocGlobal * ret.globales[keyGlobal];
+						ret.personnes[personne.nom] = {};
+						ret.personnes[personne.nom].corpsMetier = personne.contribBrute / objCorpsMetier.contribBrute * objCorpsMetier.poids;
+						ret.personnes[personne.nom].blocGlobal = ret.personnes[personne.nom].corpsMetier * ret.corpsMetier[keyCorpsMetier].blocGlobal;
+						ret.personnes[personne.nom].total = ret.personnes[personne.nom].blocGlobal * ret.globales[keyGlobal];
 					}
 				}
 			});
@@ -137,4 +137,17 @@ function generateD3JSON(json){
 		}
 	});
 	return ret;
+}
+
+function getXML(){
+	$.ajax({
+		type: "GET",
+		url: "football_player.xml",
+		dataType: "xml",
+		success: function(xml) {
+			$(xml).find("football player").each(function(){
+				console.log( $(this).name );
+			});
+		}
+	});
 }
